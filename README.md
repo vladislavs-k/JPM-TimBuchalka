@@ -12,7 +12,7 @@ Execution plan | Progress  |   Section name
 ---------------|-----------|--------------------------------------------------------------
      Yes       | Completed |   1. Course Introduction
      Yes       | Completed |   2. Software Tools Setup
-     Yes       |           |   3. First Steps
+     Yes       | Completed |   3. First Steps
      Yes       |           |   4. Java Tutorial Expressions, Statements, Code blocks, Methods and more
      Yes       |           |   5. Control Flow Statements
      Yes       |           |   6. OOP Part 1 - Classes, Constructors and Inheritance
