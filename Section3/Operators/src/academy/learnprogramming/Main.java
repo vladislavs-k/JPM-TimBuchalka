@@ -89,5 +89,7 @@ public class Main {
         if (!myBoolean){
             System.out.println("Got some remainder");
         }
+
+        //Section 3 is fully completed
     }
 }
