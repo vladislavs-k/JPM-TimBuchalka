@@ -79,5 +79,15 @@ public class Main {
         if (wasCar){
             System.out.println("wasCar is true");
         }
+
+        double myFirstDouble = 20d;
+        double mySecondDouble = 80d;
+        double myThirdDouble = (myFirstDouble + mySecondDouble) * 100;
+        double myRemainder = myThirdDouble % 40d;
+        boolean myBoolean = (myRemainder == 0) ? true : false;
+        System.out.println(myBoolean);
+        if (!myBoolean){
+            System.out.println("Got some remainder");
+        }
     }
 }
