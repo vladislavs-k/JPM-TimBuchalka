@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c80d4a8b-2129-4bb9-9eeb-b79efe7957e8" name="Changes" comment="" />
+    <list default="true" id="75c1bf20-0870-4f03-96cc-e6bbd6564af5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2C8MgxI0HMsfke9zwkpQ7olaTXO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2C8PL927iVNyiK2t3AOlr1TWMWu" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
@@ -77,7 +70,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.timbuchalka.Main" />
-      <module name="StatementsWhiteSpaceAndIndenting" />
+      <module name="untitled104" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -89,11 +82,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c80d4a8b-2129-4bb9-9eeb-b79efe7957e8" name="Changes" comment="" />
-      <created>1658179874188</created>
+      <changelist id="75c1bf20-0870-4f03-96cc-e6bbd6564af5" name="Changes" comment="" />
+      <created>1658181180581</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1658179874188</updated>
+      <updated>1658181180581</updated>
     </task>
     <servers />
   </component>
