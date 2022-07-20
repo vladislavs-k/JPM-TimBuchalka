@@ -2,31 +2,42 @@ package com.timbuchalka;
 
 public class Main {
 
-    public static void main(String[] args) {
-        getDurationString(61, 59);
+    private static final String INVALID_VALUE_MESSAGE = "Invalid value";
 
-        getDurationString(3661);
+    public static void main(String[] args) {
+        System.out.println(getDurationString(61, 1));
+        System.out.println(getDurationString(3661));
     }
 
-    public static void getDurationString(int minutes, int seconds){
+    private static String  getDurationString(int minutes, int seconds){
         if (minutes < 0 || seconds < 0 || seconds > 59){
-            System.out.println("Invalid value");
+            return INVALID_VALUE_MESSAGE;
         } else {
             int hours = minutes / 60;
             minutes = minutes % 60;
 
-            System.out.println(hours + "h " + minutes + "m " + seconds + "s");
+            return  addLeadingZero(hours) + "h "+
+                    addLeadingZero(minutes) + "m " +
+                    addLeadingZero(seconds) + "s ";
         }
     }
 
-    public static void getDurationString(int seconds) {
+    private static String getDurationString(int seconds) {
         if (seconds < 0) {
-            System.out.println("Invalid value");
+            return INVALID_VALUE_MESSAGE;
         }else {
             int minutes = seconds / 60;
             seconds = seconds % 60;
-            getDurationString(minutes, seconds);
+
+            return getDurationString(minutes, seconds);
         }
+    }
+
+    private static String addLeadingZero(int number){
+        if (number < 10) {
+            return "0" + number;
+        }
+        return Integer.toString(number);
     }
 
 }
