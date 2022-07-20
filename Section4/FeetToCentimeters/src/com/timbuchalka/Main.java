@@ -29,6 +29,43 @@ package com.timbuchalka;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        int feet = 6;
+        int inches = 5;
+        double cm = calcFeetAndInchesToCentimeters(feet, inches);
+
+        if (cm < 0){
+            System.out.println("Invalid parameters");
+        } else {
+            System.out.println(feet + "ft and " + inches + "\" equals " + cm + "cm");
+        }
+
+        cm = calcFeetAndInchesToCentimeters(inches);
+
+        if (cm < 0){
+            System.out.println("Invalid parameters");
+        } else {
+            System.out.println(inches + "\" equals " + cm + "cm");
+        }
+
     }
+
+
+    public static double calcFeetAndInchesToCentimeters(int feet, int inches){
+        if (feet < 0 || inches < 0 || inches > 12){
+            return -1;
+        }
+         return (feet * 12 + inches) * 2.54d;
+    }
+
+    public static double calcFeetAndInchesToCentimeters(int inches){
+        if (inches < 0){
+            return -1;
+        }
+
+        int feet = inches / 12;
+        inches = inches % 12;
+
+        return calcFeetAndInchesToCentimeters(feet, inches);
+    }
+
 }
