@@ -12,5 +12,6 @@ public class Main {
         System.out.println(PaintJob.getBucketCount(6.26, 2.2));
         System.out.println(PaintJob.getBucketCount(3.26, 0.75));
 
+        //S5: Section 5 completed!
     }
 }
