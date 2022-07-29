@@ -1,5 +1,7 @@
 package com.timbuchalka;
 
+import java.util.Locale;
+
 public class Car {
 
     private int doors;
@@ -8,7 +10,16 @@ public class Car {
     private int engine;
     private String colour;
 
-    
+    public void setModel(String model){
+        String validModel = model.toLowerCase();
+        if (validModel.equals("carrera") || validModel.equals("commodore")) {
+            this.model = model;
+        }else {
+            this.model = "Unknown";
+        }
+    }
 
-
+    public String getModel(){
+        return this.model;
+    }
 }
