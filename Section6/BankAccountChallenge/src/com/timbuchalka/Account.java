@@ -24,6 +24,10 @@ public class Account {
         this.customerPhoneNumber = customerPhoneNumber;
     }
 
+    public Account(String customerName, String customerEmail, int customerPhoneNumber) {
+        this(1111111111, 100.55, customerName, customerEmail, customerPhoneNumber);
+    }
+
     public int getAccountNumber() {
         return accountNumber;
     }

@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
         Account account = new Account();
-        
+
 //        Account account = new Account(123456789, 0d,
 //                "Bob Jones", "bob@jones.com",
 //                23232323);
@@ -59,5 +59,8 @@ public class Main {
         System.out.println("Bank account balance is: " + account.getBalance());
         account.withdraw(3500.0);
         System.out.println("Bank account balance is: " + account.getBalance());
+
+        Account myAccount = new Account("Vlad", "vlad@vlad.com",88888888);
+        System.out.println(myAccount.getAccountNumber() + " name " + myAccount.getCustomerName());
     }
 }
