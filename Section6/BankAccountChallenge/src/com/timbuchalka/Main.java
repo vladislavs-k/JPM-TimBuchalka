@@ -21,18 +21,25 @@ public class Main {
 
     public static void main(String[] args) {
         Account account = new Account();
-        account.withdraw(100);
-        account.deposit(50);
-        account.withdraw(100);
-        account.deposit(51);
-        account.withdraw(100);
+        
+//        Account account = new Account(123456789, 0d,
+//                "Bob Jones", "bob@jones.com",
+//                23232323);
+
         System.out.println();
 
-        account.setAccountNumber(123456789);
-        account.setBalance(0.0);
-        account.setCustomerName("Bob Jones");
-        account.setCustomerEmail("bob@jones.com");
-        account.setCustomerPhoneNumber(23232323);
+//        account.withdraw(100);
+//        account.deposit(50);
+//        account.withdraw(100);
+//        account.deposit(51);
+//        account.withdraw(100);
+//        System.out.println();
+
+//        account.setAccountNumber(123456789);
+//        account.setBalance(0.0);
+//        account.setCustomerName("Bob Jones");
+//        account.setCustomerEmail("bob@jones.com");
+//        account.setCustomerPhoneNumber(23232323);
 
         System.out.println("Account number is: " + account.getAccountNumber());
         System.out.println("Account initial balance: " + account.getBalance());
