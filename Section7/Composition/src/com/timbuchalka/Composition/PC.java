@@ -1,4 +1,4 @@
-package com.timbuchalka;
+package com.timbuchalka.Composition;
 
 public class PC {
     private Case theCase;
@@ -11,15 +11,14 @@ public class PC {
         this.motherboard = motherboard;
     }
 
-    public Case getTheCase() {
-        return theCase;
+    public void  powerUp(){
+        theCase.pressPowerButton();
+        drawLogo();
     }
 
-    public Monitor getMonitor() {
-        return monitor;
+    private void drawLogo(){
+//        getMonitor().drawPixelAt(120, 50, "yellow");
+        monitor.drawPixelAt(120, 50, " yellow");
     }
 
-    public Motherboard getMotherboard() {
-        return motherboard;
-    }
 }

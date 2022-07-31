@@ -1,4 +1,4 @@
-package com.timbuchalka;
+package com.timbuchalka.InheritenceRecap;
 
 public class Vehicle {
     private String name;

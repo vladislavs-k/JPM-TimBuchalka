@@ -1,4 +1,4 @@
-package com.timbuchalka;
+package com.timbuchalka.Composition;
 
 public class Case {
     private String model;

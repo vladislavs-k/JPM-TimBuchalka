@@ -1,4 +1,4 @@
-package com.timbuchalka;
+package com.timbuchalka.InheritenceRecap;
 
 public class Car extends Vehicle{
     private int doors;
