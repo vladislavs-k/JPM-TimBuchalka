@@ -15,7 +15,7 @@ Execution plan | Progress  |   Section name
      Yes       | Completed |   3. First Steps
      Yes       | Completed |   4. Java Tutorial Expressions, Statements, Code blocks, Methods and more
      Yes       | Completed |   5. Control Flow Statements
-     Yes       | InProgress|   6. OOP Part 1 - Classes, Constructors and Inheritance
+     Yes       | Completed |   6. OOP Part 1 - Classes, Constructors and Inheritance
      Yes       |           |   7. OOP Part 2 - Composition, Encapsulation, and Polymorphism
      Yes       |           |   8. Arrays, Java inbuilt Lists, Autoboxing and Unboxing
      Yes       |           |   9. Inner and Abstract Classes & Interfaces
