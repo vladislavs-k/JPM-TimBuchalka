@@ -23,6 +23,14 @@ package com.timbuchalka;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Jeep jeep = new Jeep(10);
+        jeep.steer(45);
+        System.out.println();
+        jeep.acceleerate(30);
+        System.out.println();
+        jeep.acceleerate(20);
+        System.out.println();
+        jeep.acceleerate(-42);
     }
 }

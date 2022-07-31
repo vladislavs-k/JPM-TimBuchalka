@@ -1,6 +1,6 @@
 package com.timbuchalka;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle {
     private int wheels;
     private int doors;
     private int gears;
@@ -22,9 +22,9 @@ public class Car extends Vehicle{
         System.out.println("Car.setCurrentGear(): Change to " + this.currentGear + " gear.");
     }
 
-    public void changeVelocity(int speed, int direction){
-        move(speed,direction);
+    public void changeVelocity(int speed, int direction) {
         System.out.println("Car.changeVelocity(): Speed: " + speed + " direction " + direction);
+        move(speed, direction);
     }
 
 }
