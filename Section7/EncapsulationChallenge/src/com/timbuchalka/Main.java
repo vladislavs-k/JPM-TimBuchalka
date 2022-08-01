@@ -12,6 +12,21 @@ package com.timbuchalka;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Printer printer = new Printer(50, false);
+        System.out.println("Initial page count = " + printer.getNumberOfPrintedPaperSheets());
+
+        System.out.println();
+
+        int pagesToPrint = 5;
+        printer.printPage(pagesToPrint);
+        System.out.println("Pages to print: " + pagesToPrint);
+        System.out.println("Total paper sheets used = " + printer.getNumberOfPrintedPaperSheets());
+
+        System.out.println();
+
+        pagesToPrint = 7;
+        printer.printPage(pagesToPrint);
+        System.out.println("Pages to print: " + pagesToPrint);
+        System.out.println("Total paper sheets used = " + printer.getNumberOfPrintedPaperSheets());
     }
 }
