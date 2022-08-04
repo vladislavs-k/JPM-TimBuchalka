@@ -17,7 +17,7 @@ Execution plan | Progress  |   Section name
      Yes       | Completed |   5. Control Flow Statements
      Yes       | Completed |   6. OOP Part 1 - Classes, Constructors and Inheritance
      Yes       | Completed |   7. OOP Part 2 - Composition, Encapsulation, and Polymorphism
-     Yes       |           |   8. Arrays, Java inbuilt Lists, Autoboxing and Unboxing
+     Yes       | InProgress|   8. Arrays, Java inbuilt Lists, Autoboxing and Unboxing
      Yes       |           |   9. Inner and Abstract Classes & Interfaces
      Yes       |           |   10. Java Generics
      Yes       |           |   11. Naming Conventions and Packages.  static and final keywords
