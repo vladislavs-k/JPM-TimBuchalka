@@ -28,6 +28,21 @@ public class Main {
 // There is a whole Java I/O section later in the course where you will get to use files, etc.
 
     public static void main(String[] args) {
+        Player vlad = new Player("Vlad", 10, 15);
+        System.out.println(vlad.toString());
+        saveObject(vlad);
+
+        vlad.setHitPoints(8);
+        System.out.println(vlad);
+        vlad.setWeapon("Minigun");
+        saveObject(vlad);
+//        loadObject(vlad);
+        System.out.println(vlad);
+
+        ISaveable zombie = new Monster("Zombie", 20, 40);
+        System.out.println("Zombie's strength = " + ((Monster) zombie).getStrength() );
+        System.out.println(zombie);
+        saveObject(zombie);
 
     }
 
@@ -58,6 +73,17 @@ public class Main {
             }
         }
         return values;
+    }
+
+    public static void saveObject(ISaveable objectToSave){
+        for (int i = 0; i < objectToSave.write().size(); i++){
+            System.out.println("Saving " + objectToSave.write().get(i) + " to storage device");
+        }
+    }
+
+    public static void loadObject(ISaveable objectToLoad){
+        ArrayList<String> values = readValues();
+        objectToLoad.read(values);
     }
 
 }
