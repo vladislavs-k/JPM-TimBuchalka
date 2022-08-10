@@ -8,6 +8,10 @@ public class Main {
         vladsPhone.powerOn();
         vladsPhone.callPhone(12345678);
         vladsPhone.answer();
-        
+
+        vladsPhone = new MobilePhone(234567890);
+        vladsPhone.powerOn();
+        vladsPhone.callPhone(234567890);
+        vladsPhone.answer();
     }
 }
