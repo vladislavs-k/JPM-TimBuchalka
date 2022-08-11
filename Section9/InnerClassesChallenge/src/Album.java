@@ -11,16 +11,22 @@ import java.util.LinkedList;
 public class Album {
     private String name;
     private String artist;
-    private ArrayList<Song> songs;
+    private SongList songs;
+
 
     public Album(String name, String artist) {
         this.name = name;
         this.artist = artist;
-        songs = new ArrayList<>();
+        this.songs = new SongList();
     }
 
     public boolean addSong(String songTitle, double songDuration){
-        if(findSong(songTitle) == null){
+//        if(findSong(songTitle) == null){
+//            songs.add(new Song(songTitle, songDuration));
+//            return true;
+//        }
+
+        if(songs.findSong(songTitle) == null){
             songs.add(new Song(songTitle, songDuration));
             return true;
         }
@@ -28,19 +34,25 @@ public class Album {
         return false;
     }
 
-    private Song findSong(String songTitle){
-        for (Song song : songs){
-            if (song.getTitle().equals(songTitle)){
-                return song;
-            }
-        }
+//    private Song findSong(String songTitle){
+//        for (Song song : songs){
+//            if (song.getTitle().equals(songTitle)){
+//                return song;
+//            }
+//        }
+//
+//        return null;
+//    }
 
-        return null;
-    }
+    public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist) {
+//        if (trackNumber > 0 && trackNumber <= songs.size()) {
+//            playlist.add(songs.get(trackNumber - 1));
+//            return true;
+//        }
 
-    public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist){
-        if(trackNumber > 0 && trackNumber <= songs.size()){
-            playlist.add(songs.get(trackNumber - 1));
+        Song song = songs.findSong(trackNumber - 1);
+        if ( (trackNumber > 0) && (song != null) ){
+            playlist.add(song);
             return true;
         }
 
@@ -48,14 +60,63 @@ public class Album {
         return false;
     }
 
-    public boolean addToPlayList(String songTitle,LinkedList<Song> playlist){
-        Song song = findSong(songTitle);
-        if (song != null){
+    public boolean addToPlayList(String songTitle, LinkedList<Song> playlist) {
+//        Song song = findSong(songTitle);
+//        if (song != null) {
+//            playlist.add(song);
+//            return true;
+//        }
+
+        Song song = songs.findSong(songTitle);
+        if (song != null) {
             playlist.add(song);
             return true;
         }
 
         System.out.println("Song '" + songTitle + "' does not exist");
         return false;
+    }
+
+
+
+
+//***IMPORTANT*** - If you are using an IDE to write this code
+// you may have your inner class marked with private access.
+// However, for the purposes of this code evaluation please mark
+// the class itself public static.
+
+    public static class SongList {
+        private ArrayList<Song> songs;
+
+        private SongList() {
+            this.songs = new ArrayList<>();
+        }
+
+        private boolean add(Song song) {
+            if (findSong(song.getTitle()) == null){
+                this.songs.add(song);
+                return true;
+            }
+
+            return false;
+        }
+
+        private Song findSong(String songTitle) {
+            for (Song song : this.songs) {
+                if (song.getTitle().equals(songTitle)) {
+                    return song;
+                }
+            }
+
+            return null;
+        }
+
+        private Song findSong(int songTrackNumber) {
+            if( (songTrackNumber >= 0) && (songTrackNumber < songs.size()) ) {
+                return songs.get(songTrackNumber);
+            }
+
+            return null;
+        }
     }
 }
