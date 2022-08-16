@@ -1,8 +1,13 @@
 package com.timbuchalka;
 
+//import org.w3c.dom.Node;
+//import javafx.scene.Node;
+
+import org.w3c.dom.Node;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        org.w3c.dom.Node node = null;
     }
 }
