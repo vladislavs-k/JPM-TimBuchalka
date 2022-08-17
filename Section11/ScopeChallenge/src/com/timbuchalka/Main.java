@@ -19,9 +19,20 @@ package com.timbuchalka;
 // Change your program so that ALL variables (including the scanner
 // instance) are called x.
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        System.out.print("Enter a number: ");
+        X x = new X();
+        x.x(x());
+
+    }
+
+    public static int x(){
+        Scanner x = new Scanner(System.in);
+        return x.nextInt();
     }
 }
