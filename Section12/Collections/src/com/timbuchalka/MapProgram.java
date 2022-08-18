@@ -25,6 +25,21 @@ public class MapProgram {
 
         System.out.println("===========================================");
 
+//        languages.remove("Lips");
+//        if(languages.remove("Algol", "an algorithmic language")){
+        if(languages.remove("Algol", "an algorithmic language")){
+            System.out.println("Algol removed");
+        } else {
+            System.out.println("Algol not removed, key/value pair not found");
+        }
+
+        if(languages.replace("Lips", "Therein lines madness", "a functional programming language")){
+            System.out.println("Lips replaced");
+        } else {
+            System.out.println("Lips was not replaced");
+        }
+        System.out.println(languages.replace("Scala", "this will not be added"));
+
         for (String  key : languages.keySet()){
             System.out.println(key + " : " + languages.get(key));
         }
