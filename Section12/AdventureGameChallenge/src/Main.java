@@ -4,9 +4,11 @@
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
-    private Map<Integer, Location> locations = new HashMap<Integer, Location>();
+    private Map<Integer, Location> locations = new HashMap<>();
+    private Map<String, String> vocabulary= new HashMap<>();
 
     public Main() {
         locations.put(0, new Location(0, "You are sitting in front of a computer learning Java"));
@@ -30,9 +32,57 @@ public class Main {
 
         locations.get(5).addExit("S", 1);
         locations.get(5).addExit("W", 2);
+
+        vocabulary.put("NORTH", "N");
+        vocabulary.put("SOUTH", "S");
+        vocabulary.put("WEST", "W");
+        vocabulary.put("EAST", "E");
+        vocabulary.put("QUIT", "Q");
     }
 
     public void command() {
-        // write code here
+        Scanner scanner = new Scanner(System.in);
+
+        int loc = 1;
+        while(true) {
+            System.out.println(locations.get(loc).getDescription());
+            if(loc == 0) {
+                break;
+            }
+
+            Map<String, Integer> exits = locations.get(loc).getExits();
+            System.out.print("Available exits are ");
+            for (String exit : exits.keySet()){
+                System.out.print(exit + ", ");
+            }
+            System.out.println();
+
+//================================================================
+            String userInput = scanner.nextLine().toUpperCase();
+            String[] findDirection = userInput.split(" ");
+
+            int checkDir = 0;
+            String direction = "";
+            for (String dir : findDirection) {
+                if (vocabulary.containsKey(dir)){
+                    direction = vocabulary.get(dir);
+                    checkDir++;
+                } else if (vocabulary.containsValue(dir)){
+                    direction = dir;
+                    checkDir++;
+                }
+            }
+//================================================================
+
+            if (checkDir == 1 && exits.containsKey(direction)){
+                loc = exits.get(direction);
+            } else {
+                System.out.println("You cannot go in that direction");
+            }
+
+        }
     }
+
+
+
 }
