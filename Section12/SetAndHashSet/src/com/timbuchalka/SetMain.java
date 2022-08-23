@@ -69,7 +69,7 @@ public class SetMain {
         if(nature.containsAll(intersectionTest)) {
             System.out.println("intersection is  subset of nature");
         }
-        
+
         if(divine.containsAll(intersectionTest)) {
             System.out.println("intersection is a subset of divine");
         }
