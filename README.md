@@ -21,7 +21,7 @@ Execution plan | Progress  |   Section name
      Yes       | Completed |   9. Inner and Abstract Classes & Interfaces
      Yes       | Completed |   10. Java Generics
      Yes       | Completed |   11. Naming Conventions and Packages.  static and final keywords
-     Yes       | InProgress|   12. Java Collections
+     Yes       | Completed |   12. Java Collections
      Skip      |           |   13. JavaFX
      Skip      |           |   14. Basic Input & Output including java.util
      Skip      |           |   15. Concurrency in Java
