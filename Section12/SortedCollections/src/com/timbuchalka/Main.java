@@ -178,3 +178,5 @@ public class Main {
         basket.clearBasket();
     }
 }
+
+//S12: Section 12 completed!
