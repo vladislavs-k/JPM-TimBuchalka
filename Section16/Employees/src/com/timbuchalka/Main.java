@@ -2,11 +2,9 @@ package com.timbuchalka;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
-import java.util.function.Function;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Main {
 
@@ -45,6 +43,27 @@ public class Main {
                 System.out.println(getAName(getLastName, employee));
             }
         }
+
+        Function<Employee, String> upperCase = employee -> employee.getName().toUpperCase();
+        Function<String, String> firstName = name -> name.substring(0, name.indexOf(' '));
+        Function chainedFunction = upperCase.andThen(firstName);
+        System.out.println(chainedFunction.apply(employees.get(0)));
+
+        BiFunction<String, Employee, String> concatAge = (name, employee) -> {
+            return name.concat(" " + employee.getAge());
+        };
+
+        String upperName = upperCase.apply(employees.get(0));
+        System.out.println(concatAge.apply(upperName, employees.get(0)));
+
+        IntUnaryOperator intBy5 = i -> i + 5;
+        System.out.println(intBy5.applyAsInt(10));
+
+        Consumer<String> c1 = s -> s.toUpperCase();
+        Consumer<String> c2  = s -> System.out.println(s);
+        c1.andThen(c2).accept("Hello, World!");
+
+
 
 //        printEmployeesByAge(employees, "Employees over 30", employee -> employee.getAge() > 30);
 //        printEmployeesByAge(employees, "Employees 30 and under", employee -> employee.getAge() <= 30);
