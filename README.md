@@ -26,7 +26,7 @@ Execution plan | Progress  |   Section name
      Skip      |           |   14. Basic Input & Output including java.util
      Skip      |           |   15. Concurrency in Java
      Yes       | Completed |   16. Lambda Expressions
-     Yes       |           |   17. Regular Expressions
+     Yes       | InProgress|   17. Regular Expressions
      Yes       |           |   18. Debugging and Unit Testing
      Yes       |           |   19. Databases
      Skip      |           |   20. Java Networking Programming
