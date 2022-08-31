@@ -188,6 +188,41 @@ public class Main {
         }
 
 
+//==========================================
+        //Challenge #12
+        //Write a regex that will match a 5-digit US zip code. Use "11111" as your test string.
+
+        //Challenge #12 solution:
+        System.out.println("\nChallenge #12:");
+        String challenge12 = "11111";
+        System.out.println(challenge12.matches("^\\d{5}$"));
+
+
+//==========================================
+        //Challenge #13
+        //US zip codes can be followed by a dash and another fur numbers.
+        //Write a regex that will match those zip codes.
+        //Use "11111-1111" as your test string.
+
+        //Challenge #13 solution:
+        System.out.println("\nChallenge #13:");
+        String challenge13 = "11111-1111";
+        System.out.println(challenge13.matches("^\\d{5}-\\d{4}$"));
+
+
+//==========================================
+        //Challenge #14
+        //Write a regex that will match 5-digit US zip code, and zip codes
+        //that contain the optional 4 digit preceded by a dash.
+
+        //Challenge #14 solution:
+        System.out.println("\nChallenge #14:");
+//        String ch14Regex = "^\\d{5}$|^\\d{5}-\\d{4}$";
+        String ch14Regex = "^\\d{5}(-\\d{4})?$"; //Tim's solution
+        System.out.println(challenge12.matches(ch14Regex));
+        System.out.println(challenge13.matches(ch14Regex));
+
+
 
 
 
