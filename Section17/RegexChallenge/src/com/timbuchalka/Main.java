@@ -118,6 +118,77 @@ public class Main {
         System.out.println(challenge7.matches(ch7Regex));
 
 
+//==========================================
+        //Challenge #8
+        //Modify the regex in challenge 7 to use a group, so that we can print all the digits
+        //that occur in a string that contains multiple occurrences of the pattern. Write all the code
+        //required to accomplish this (create a pattern and matcher, etc.). Use following string to
+        //test your code:
+
+        //Challenge #8 solution:
+        System.out.println("\nChallenge #8:");
+        String challenge8 = "abcd.135uvqz.7tzik.999";
+        String ch8GroupRegex = "\\w+\\.(\\d+)";
+        Pattern ch8Pattern = Pattern.compile(ch8GroupRegex);
+        Matcher ch8Matcher = ch8Pattern.matcher(challenge8);
+        while (ch8Matcher.find()){
+            System.out.println(ch8Matcher.group(1));
+        }
+
+
+//==========================================
+        //Challenge #9
+        //Let's suppose we're reading string that match the pattern we used in challenge 7 and 8
+        //from a file. Tabs are used to separate the matches, with one exception. The last match is
+        //followed by a newline. Our revised challenge 8 string would look k=like this:
+        //Revise the regex accordingly and extract all the numbers, as we did in challenge 8
+
+        //Challenge #9 solution:
+        System.out.println("\nChallenge #9:");
+        String challenge9 = "abcd.135\tuvqz.7\ttzik.999\n";
+
+        String ch9GroupRegex = "\\w+\\.(\\d+)[\\t|\\n]";
+        Pattern ch9Pattern = Pattern.compile(ch9GroupRegex);
+        Matcher ch9Matcher = ch9Pattern.matcher(challenge9);
+        while (ch9Matcher.find()){
+            System.out.println(ch9Matcher.group(1));
+        }
+
+
+//==========================================
+        //Challenge #10
+        //Instead of printing out the numbers themselves, print out their start and end
+        //indices. Use the same string we used from challenge 9. Make those indices
+        //inclusive. For example, the start index printed for 135 should be 5, and the end
+        //index should be 7.
+
+        //Challenge #10 solution:
+        System.out.println("\nChallenge #10:");
+        ch9Matcher.reset();
+        while (ch9Matcher.find()){
+            System.out.println("Start index: " + ch9Matcher.start(1) + " ; end index: " + (ch9Matcher.end(1) - 1) );
+        }
+
+
+//==========================================
+        //Challenge #11
+        //Suppose we have the following string containing points on a graph
+        //within curly braces. Extract what's in the curly braces.
+
+        //Challenge #11 solution:
+        System.out.println("\nChallenge #11:");
+        String challenge11 = "{0, 2}, {0, 5}, {1, 3}, {2, 4}";
+//        String challenge11 = "{0, 2}, {0, 5}, {1, 3}, {2, 4} {x, y}, {6, 34}, {11, 12}";   //Check
+        String ch11GroupRegex = "\\{(\\d+, \\d+)\\}";
+//        String ch11GroupRegex = "\\{(.+?)\\}";    //Tim's solution
+        Pattern ch11Pattern = Pattern.compile(ch11GroupRegex);
+        Matcher ch11Matcher = ch11Pattern.matcher(challenge11);
+        while (ch11Matcher.find()){
+            System.out.println(ch11Matcher.group(1));
+        }
+
+
+
 
 
     }
