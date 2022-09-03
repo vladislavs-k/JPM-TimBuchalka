@@ -1,5 +1,6 @@
 package com.timbuchalka;
 
+
 public class StringUtilities {
     private StringBuilder sBuilder = new StringBuilder();
     private int charsAdded = 0;
