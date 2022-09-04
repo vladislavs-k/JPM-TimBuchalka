@@ -3,6 +3,7 @@ package com.timbuchalka;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Utilities utilities = new Utilities();
+        utilities.removePairs("AABCDDEFF");
     }
 }
