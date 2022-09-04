@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4424ab23-eecf-4de3-8ac4-b06d5219e9f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JUnitChallange/JUnitChallange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../JUnitChallange/JUnitChallange.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JUnitChallange/src/com/timbuchalka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JUnitChallange/src/com/timbuchalka/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUnitChallange/out/production/JUnitChallange/com/timbuchalka/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JUnitChallange/out/production/JUnitChallange/com/timbuchalka/Utilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUnitChallange/out/production/JUnitChallange/com/timbuchalka/UtilitiesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JUnitChallange/out/production/JUnitChallange/com/timbuchalka/UtilitiesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUnitChallange/src/com/timbuchalka/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JUnitChallange/src/com/timbuchalka/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUnitChallange/src/com/timbuchalka/UtilitiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JUnitChallange/src/com/timbuchalka/UtilitiesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -8,7 +8,19 @@ class UtilitiesTest {
 
     @Test
     void everyNthChar() {
-        fail("There is no test's implementation");
+        Utilities utilities = new Utilities();
+        char[] input = {'h', 'e', 'l', 'l', 'o'};
+        char[] expect = {'e', 'l'};
+
+        assertArrayEquals(expect, utilities.everyNthChar(input, 2));
+    }
+
+    @Test
+    void everyNthChar_nGreaterThanArrayLength(){
+        Utilities utilities = new Utilities();
+        char[] input = {'h', 'e', 'l', 'l', 'o'};
+
+        assertArrayEquals(input, utilities.everyNthChar(input, 10));
     }
 
     @Test
@@ -24,12 +36,33 @@ class UtilitiesTest {
     }
 
     @Test
+    void removePairs_Null(){
+        Utilities utilities = new Utilities();
+        assertNull(utilities.removePairs(null), "null");
+    }
+
+    @Test
+    void removePairs_lengthLessThan2(){
+        Utilities utilities = new Utilities();
+        String inputTestString = "A";
+        assertEquals(inputTestString, utilities.removePairs(inputTestString));
+    }
+
+    @Test
     void converter() {
-        fail("There is no test's implementation");
+        Utilities utilities = new Utilities();
+
+        assertEquals(300, utilities.converter(10, 5));
     }
 
     @Test
     void nullIfOddLength() {
-        fail("There is no test's implementation");
+        Utilities utilities = new Utilities();
+        String evenString = "even";
+        String oddString = "odd";
+
+        assertEquals(evenString, utilities.nullIfOddLength(evenString));
+        assertNotNull(utilities.nullIfOddLength(evenString));
+        assertNull(utilities.nullIfOddLength(oddString));
     }
 }
