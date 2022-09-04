@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4424ab23-eecf-4de3-8ac4-b06d5219e9f4" name="Changes" comment="" />
+    <list default="true" id="4424ab23-eecf-4de3-8ac4-b06d5219e9f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +109,7 @@
   <component name="RunManager" selected="JUnit.BankAccountTestParameterized.getBalance_deposit">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.timbuchalka.Main" />
-      <module name="untitled104" />
+      <module name="JUnitChallange" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -116,7 +118,7 @@
       </method>
     </configuration>
     <configuration name="BankAccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="untitled104" />
+      <module name="JUnitChallange" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.timbuchalka.*" />
@@ -132,7 +134,7 @@
       </method>
     </configuration>
     <configuration name="BankAccountTestParameterized.getBalance_deposit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="untitled104" />
+      <module name="JUnitChallange" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.timbuchalka.*" />
@@ -143,6 +145,19 @@
       <option name="MAIN_CLASS_NAME" value="com.timbuchalka.BankAccountTestParameterized" />
       <option name="METHOD_NAME" value="getBalance_deposit" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="JUnitChallange" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="JUnitChallange" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
