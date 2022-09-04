@@ -7,3 +7,5 @@ public class Main {
         utilities.removePairs("AABCDDEFF");
     }
 }
+
+//S18: Section 18 completed!
