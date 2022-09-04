@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4424ab23-eecf-4de3-8ac4-b06d5219e9f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/timbuchalka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/timbuchalka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/timbuchalka/BankAccountTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/timbuchalka/BankAccountTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/timbuchalka/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/timbuchalka/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/timbuchalka/BankAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/timbuchalka/BankAccountTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +130,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.timbuchalka" />
       <option name="MAIN_CLASS_NAME" value="com.timbuchalka.BankAccountTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
