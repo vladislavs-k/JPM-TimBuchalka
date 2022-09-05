@@ -1,0 +1,3 @@
+CREATE DATABASE testjava;
+DROP DATABASE testjava;
+
