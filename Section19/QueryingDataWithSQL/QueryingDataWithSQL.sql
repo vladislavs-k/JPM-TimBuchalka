@@ -59,3 +59,33 @@ INNER JOIN albums ON songs.album = albums._id
 INNER JOIN artists ON albums.artist = artists._id
 WHERE albums.name = "Doolittle"
 ORDER BY artists.name, albums.name, songs.track;
+
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs 
+INNER JOIN albums ON songs.album = albums._id
+INNER JOIN artists ON albums.artist = artists._id
+WHERE songs.title LIKE '%doctor%'
+ORDER BY artists.name, albums.name, songs.track;
+
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs 
+INNER JOIN albums ON songs.album = albums._id
+INNER JOIN artists ON albums.artist = artists._id
+WHERE artists.name LIKE 'jefferson%'
+ORDER BY artists.name, albums.name, songs.track;
+
+CREATE VIEW artist_list AS
+SELECT artists.name AS artist_name, albums.name AS album_name, songs.track, songs.title FROM songs 
+INNER JOIN albums ON songs.album = albums._id
+INNER JOIN artists ON albums.artist = artists._id
+ORDER BY artists.name , albums.name, songs.track;
+
+SELECT * FROM artist_list;
+
+SELECT * FROM artist_list WHERE artist_name LIKE 'jefferson%';
+
+CREATE VIEW album_list AS
+SELECT name FROM albums
+ORDER BY name;
+
+SELECT * FROM album_list;
+
+SELECT * FROM artist_list WHERE artist_name LIKE 'jeffer%';
