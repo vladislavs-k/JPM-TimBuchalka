@@ -1,8 +1,9 @@
 package com.timbuchalka.model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 public class DataSource {
     public static final String DB_NAME = "music";
@@ -45,6 +46,73 @@ public class DataSource {
             System.out.println("Couldn't close connection " + e.getMessage());
         }
     }
+
+//    public List<Artist> queryArtists(){
+//        Statement stmt = null;
+//        ResultSet rs = null;
+//
+//        try {
+//            stmt = conn.createStatement();
+//            rs = stmt.executeQuery("SELECT * FROM " + TABLE_ARTISTS);
+//
+//            List<Artist> artists = new ArrayList<>();
+//            while (rs.next()){
+//                Artist artist = new Artist();
+//                artist.setId(rs.getInt(COLUMN_ARTIST_ID));
+//                artist.setName(rs.getString(COLUMN_ARTIST_NAME));
+//                artists.add(artist);
+//            }
+//
+//            return artists;
+//
+//        } catch (SQLException e){
+//            System.out.println("Query failed: " + e.getMessage());
+//            return null;
+//        } finally {
+//
+//            try {
+//                if(rs != null){
+//                    rs.close();
+//                }
+//            } catch (SQLException e){
+//                System.out.println("Error closing ResultSet: " + e.getMessage());
+//                e.printStackTrace();
+//            }
+//
+//            try {
+//                if(stmt != null){
+//                    stmt.close();
+//                }
+//            } catch (SQLException e){
+//                System.out.println("Error closing Statement: " + e.getMessage());
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+
+
+    public List<Artist> queryArtists(){
+
+        try ( Statement stmt = conn.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLE_ARTISTS)){
+
+            List<Artist> artists = new ArrayList<>();
+            while (rs.next()){
+                Artist artist = new Artist();
+                artist.setId(rs.getInt(COLUMN_ARTIST_ID));
+                artist.setName(rs.getString(COLUMN_ARTIST_NAME));
+                artists.add(artist);
+            }
+
+            return artists;
+
+        } catch (SQLException e){
+            System.out.println("Query failed: " + e.getMessage());
+            return null;
+        }
+    }
+
+
 
 
 }
