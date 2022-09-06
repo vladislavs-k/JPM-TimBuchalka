@@ -2,6 +2,7 @@ package com.timbuchalka;
 
 import com.timbuchalka.model.Artist;
 import com.timbuchalka.model.DataSource;
+import com.timbuchalka.model.SongArtist;
 
 import java.util.List;
 
@@ -33,6 +34,19 @@ public class Main {
             System.out.println(album);
         }
 
+        List<SongArtist> songArtists = dataSource.queryArtistsFromSong("Go Your Own Way", DataSource.ORDER_BY_ASC);
+        if(songArtists == null){
+            System.out.println("Couldn't find the artist for the song");
+            return;
+        }
+
+        for(SongArtist songArtist : songArtists){
+            System.out.println("Artist name = " + songArtist.getArtistName() +
+                    " | Album name = " + songArtist.getAlbumName() +
+                    " | Track = " + songArtist.getTrack());
+        }
+
+        dataSource.querySongsMetadata();
 
         dataSource.close();
     }
