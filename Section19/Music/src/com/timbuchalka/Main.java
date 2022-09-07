@@ -5,6 +5,7 @@ import com.timbuchalka.model.DataSource;
 import com.timbuchalka.model.SongArtist;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -53,7 +54,11 @@ public class Main {
 
         dataSource.createViewForSongArtists();
 
-        songArtists = dataSource.querySongInfoView("She's On Fire"); //Go Your Own Way      Heartless       She's On Fire
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a song title: ");
+        String title = scanner.nextLine();
+
+        songArtists = dataSource.querySongInfoView(title); //Go Your Own Way      Heartless       She's On Fire
         if(songArtists.isEmpty()) {
             System.out.println("Couldn't find the artist for the song");
             return;

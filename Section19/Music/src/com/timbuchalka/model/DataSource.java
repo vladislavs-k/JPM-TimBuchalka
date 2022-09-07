@@ -77,18 +77,25 @@ public class DataSource {
             TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + ", " +
             TABLE_SONGS + "." + COLUMN_SONG_TRACK;
 
-    public static final String QUERY_VIEW_SONG_INFO =  "SELECT " + COLUMN_ARTIST_NAME + ", " +
+    public static final String QUERY_VIEW_SONG_INFO = "SELECT " + COLUMN_ARTIST_NAME + ", " +
             COLUMN_SONG_ALBUM + ", " + COLUMN_SONG_TRACK + " FROM " + TABLE_ARTIST_SONG_VIEW +
             " WHERE " + COLUMN_SONG_TITLE + " = \"";
 
-
+    // SELECT name, album, track FROM artist_list WHERE title = ?
+    public static final String QUERY_VIEW_SONG_INFO_PREP = "SELECT " + COLUMN_ARTIST_NAME + ", " +
+            COLUMN_SONG_ALBUM + ", " + COLUMN_SONG_TRACK + " FROM " + TABLE_ARTIST_SONG_VIEW +
+            " WHERE " + COLUMN_SONG_TITLE + " = ?";
 
 
     private Connection conn;
 
+    private PreparedStatement querySongInfoView;
+
     public boolean open() {
         try {
             conn = DriverManager.getConnection(CONNECTION_STRING + DB_NAME, USER, PASS);
+            querySongInfoView = conn.prepareStatement(QUERY_VIEW_SONG_INFO_PREP);
+
             return true;
         } catch (SQLException e) {
             System.out.println("Couldn't connect to database " + e.getMessage());
@@ -98,6 +105,10 @@ public class DataSource {
 
     public void close() {
         try {
+            if(querySongInfoView != null){
+                querySongInfoView.close();
+            }
+
             if (conn != null) {
                 conn.close();
             }
@@ -295,28 +306,28 @@ public class DataSource {
 
             ResultSetMetaData meta = rs.getMetaData();
             int numColumns = meta.getColumnCount();
-            for(int i = 1; i <= numColumns; i++){
+            for (int i = 1; i <= numColumns; i++) {
                 System.out.format("Column %d in the songs table is names %s\n", i, meta.getColumnName(i));
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println("Query failed: " + e.getMessage());
             e.printStackTrace();
         }
 
     }
 
-    public int getCount(String table){
+    public int getCount(String table) {
         String sql = "SELECT count(*) AS count FROM " + table;
 
         try (Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sql)){
+             ResultSet rs = stmt.executeQuery(sql)) {
 
             rs.next();
             int count = rs.getInt("count");
 
             System.out.printf("Count = %d \n", count);
             return count;
-        } catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println("Query failed: " + e.getMessage());
             e.printStackTrace();
             return -1;
@@ -325,29 +336,26 @@ public class DataSource {
 
     public boolean createViewForSongArtists() {
 
-        try(Statement statement = conn.createStatement()) {
+        try (Statement statement = conn.createStatement()) {
 
             statement.execute(CREATE_ARTIST_FOR_SONG_VIEW);
             return true;
 
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println("Create View failed: " + e.getMessage());
             e.printStackTrace();
             return false;
         }
     }
 
-    public List<SongArtist> querySongInfoView(String title){
-        StringBuilder sb = new StringBuilder(QUERY_VIEW_SONG_INFO);
-        sb.append(title);
-        sb.append("\"");
-
-        System.out.println(sb.toString());
+    public List<SongArtist> querySongInfoView(String title) {
 
         List<SongArtist> songArtists = new ArrayList<>();
-        try(Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(sb.toString())){
-            while (rs.next()){
+        try {
+            querySongInfoView.setString(1, title);
+            ResultSet rs = querySongInfoView.executeQuery();
+
+            while (rs.next()) {
                 SongArtist songArtist = new SongArtist();
                 songArtist.setArtistName(rs.getString(1));
                 songArtist.setAlbumName(rs.getString(2));
@@ -356,7 +364,7 @@ public class DataSource {
             }
             return songArtists;
 
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println("Query failed: " + e.getMessage());
             e.printStackTrace();
             return null;
