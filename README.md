@@ -28,7 +28,7 @@ Execution plan | Progress  |   Section name
      Yes       | Completed |   16. Lambda Expressions
      Yes       | Completed |   17. Regular Expressions
      Yes       | Completed |   18. Debugging and Unit Testing
-     Yes       | InProgress|   19. Databases
+     Yes       | Completed |   19. Databases
      Skip      |           |   20. Java Networking Programming
      Skip      |           |   21. Java 9 Module System
      Skip      |           |   22. Migrating Java Projects to Java 9
