@@ -54,21 +54,28 @@ public class Main {
 
         dataSource.createViewForSongArtists();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a song title: ");
-        String title = scanner.nextLine();
-
-        songArtists = dataSource.querySongInfoView(title); //Go Your Own Way      Heartless       She's On Fire
-        if(songArtists.isEmpty()) {
-            System.out.println("Couldn't find the artist for the song");
-            return;
-        }
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter a song title: ");
+//        String title = scanner.nextLine();
+//
+//        songArtists = dataSource.querySongInfoView(title); //Go Your Own Way      Heartless       She's On Fire
+//        if(songArtists.isEmpty()) {
+//            System.out.print("Couldn't find the artist for the song");
+//            return;
+//        }
 
         for(SongArtist artist : songArtists) {
             System.out.println("FROM VIEW - Artist name = " + artist.getArtistName() +
                     " Album name = " + artist.getAlbumName() +
                     " Track number = " + artist.getTrack());
         }
+
+//        dataSource.insertSong("Touch of Grey", "Grateful Dead", "In The Dark", 1);
+//        dataSource.insertSong("Like A Rolling Stone","Bob Dylan", "Bob Dylan's Greatest Hits", 5);
+        dataSource.insertSong("Bird Dog","Everly Brothers", "All-Time Greatest Hits", 7);
+
+
+
 
         dataSource.close();
     }
