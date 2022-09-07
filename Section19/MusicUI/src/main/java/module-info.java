@@ -5,5 +5,6 @@ module sample.musicui {
 
 
     opens sample.musicui to javafx.fxml;
+    opens sample.musicui.model;
     exports sample.musicui;
 }
